@@ -5,10 +5,7 @@ import android.content.Context
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.isSystemInDarkTheme
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
@@ -63,7 +60,7 @@ fun HomeScreen(navController: NavHostController){
                     backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                     contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
                 onClick = {},
-                shape = RoundedCornerShape(30.dp)
+                shape = RoundedCornerShape(30.dp),
             ){
                 Text(text = "Тести", fontSize = 30.sp)
             }
@@ -72,7 +69,7 @@ fun HomeScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                     contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = {},
+                onClick = {navController.navigate(com.example.testapp.navigation.Screen.Progress.route)},
                 shape = RoundedCornerShape(30.dp)
             ){
                 Text(text = "Прогрес", fontSize = 30.sp)
@@ -82,7 +79,7 @@ fun HomeScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                     contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = {},
+                onClick = {navController.navigate(com.example.testapp.navigation.Screen.Settings.route)},
                 shape = RoundedCornerShape(30.dp)
             ){
                 Text(text = "Налаштування", fontSize = 30.sp)

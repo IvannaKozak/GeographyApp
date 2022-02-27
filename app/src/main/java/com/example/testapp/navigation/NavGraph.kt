@@ -10,9 +10,7 @@ import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.testapp.AnimatedSplashScreen
-import com.example.testapp.HomeScreen
-import com.example.testapp.LearnScreen
+import com.example.testapp.*
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -28,6 +26,12 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Learn.route){
             LearnScreen()
+        }
+        composable(route = Screen.Progress.route){
+            ProgressScreen()
+        }
+        composable(route = Screen.Settings.route){
+            SettingsScreen()
         }
     }
 }
