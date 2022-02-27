@@ -11,6 +11,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.testapp.AnimatedSplashScreen
+<<<<<<< HEAD
+=======
+import com.example.testapp.HomeScreen
+>>>>>>> 0266f8b (SplashScreen and HomeScreen)
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -21,8 +25,16 @@ fun SetupNavGraph(navController: NavHostController) {
         composable(route = Screen.Splash.route){
             AnimatedSplashScreen(navController = navController)
         }
+<<<<<<< HEAD
         composable(route = Screen.Home.route){
             Box(modifier = Modifier.fillMaxSize())
+=======
+        /*composable(route = Screen.Home.route){
+            Box(modifier = Modifier.fillMaxSize())
+        } */
+        composable(route = Screen.Home.route){
+            HomeScreen(navController = navController)
+>>>>>>> 0266f8b (SplashScreen and HomeScreen)
         }
     }
 }
