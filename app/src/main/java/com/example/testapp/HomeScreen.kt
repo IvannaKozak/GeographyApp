@@ -2,6 +2,7 @@ package com.example.testapp
 
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -18,7 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.KeyboardType.Companion.Uri
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -85,29 +88,54 @@ fun HomeScreen(navController: NavHostController){
                 Text(text = "Налаштування", fontSize = 30.sp)
             }
             Spacer(modifier = Modifier.height(100.dp))
-            Row() {
-                Image(painterResource(R.drawable.insta),
-                    contentDescription = "instagram",
-                    modifier = Modifier
-                        .height(90.dp)
-                        .width(90.dp)
-                        .clickable(onClick = {}))
-                Image(painterResource(R.drawable.teleg),
-                    contentDescription = "instagram",
-                    modifier = Modifier
-                        .height(90.dp)
-                        .width(90.dp)
-                        .clickable(onClick = {}))
-                Image(painterResource(R.drawable.ds),
-                    contentDescription = "instagram",
-                    modifier = Modifier
-                        .height(90.dp)
-                        .width(90.dp)
-                        .clickable(onClick = {}))
+
+            Row {
+                Instagram()
+                Telegram()
+                Discord()
             }
         }
     }
 }
+
+
+@Composable
+fun Instagram() {
+    val context = LocalContext.current
+    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.instagram.com/learngeographyapp/")) }
+    Image(painterResource(R.drawable.insta),
+        contentDescription = "instagram",
+        modifier = Modifier
+            .height(90.dp)
+            .width(90.dp)
+            .clickable(onClick = { context.startActivity(intent) }))
+}
+
+@Composable
+fun Telegram() {
+    val context = LocalContext.current
+    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.google.com/")) }
+    Image(painterResource(R.drawable.teleg),
+        contentDescription = "instagram",
+        modifier = Modifier
+            .height(90.dp)
+            .width(90.dp)
+            .clickable(onClick = { context.startActivity(intent) }))
+}
+
+@Composable
+fun Discord() {
+    val context = LocalContext.current
+    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.google.com/")) }
+    Image(painterResource(R.drawable.ds),
+        contentDescription = "instagram",
+        modifier = Modifier
+            .height(90.dp)
+            .width(90.dp)
+            .clickable(onClick = { context.startActivity(intent) }))
+}
+
+
 
 
 @Composable
