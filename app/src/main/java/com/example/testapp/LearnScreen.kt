@@ -35,12 +35,12 @@ fun LearnScreen(){
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(painterResource(R.drawable.earth), contentDescription = "Earth")
             Text(
                 text = "LearnScreen", fontSize = 30.sp,
                 color = if (isSystemInDarkTheme()) Color(0xFFFFB400) else Color.Black)
             Text(text = "з географії", fontSize = 22.sp,
                 color = if (isSystemInDarkTheme()) Color(0xFFFFB400) else Color.Black)
-
         }
     }
 }
