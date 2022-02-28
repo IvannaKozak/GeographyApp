@@ -62,7 +62,7 @@ fun HomeScreen(navController: NavHostController){
                 colors = ButtonDefaults.buttonColors(
                     backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                     contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = {},
+                onClick = {navController.navigate(com.example.testapp.navigation.Screen.Test.route)},
                 shape = RoundedCornerShape(30.dp),
             ){
                 Text(text = "Тести", fontSize = 30.sp)
@@ -114,9 +114,9 @@ fun Instagram() {
 @Composable
 fun Telegram() {
     val context = LocalContext.current
-    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.google.com/")) }
+    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://t.me/geography_app")) }
     Image(painterResource(R.drawable.teleg),
-        contentDescription = "instagram",
+        contentDescription = "telegram",
         modifier = Modifier
             .height(90.dp)
             .width(90.dp)
@@ -126,9 +126,9 @@ fun Telegram() {
 @Composable
 fun Discord() {
     val context = LocalContext.current
-    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.google.com/")) }
+    val intent = remember { Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://discord.gg/dS8gZNf7")) }
     Image(painterResource(R.drawable.ds),
-        contentDescription = "instagram",
+        contentDescription = "discord",
         modifier = Modifier
             .height(90.dp)
             .width(90.dp)
