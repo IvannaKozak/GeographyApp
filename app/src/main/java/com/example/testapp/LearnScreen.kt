@@ -5,10 +5,7 @@ import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,6 +26,9 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun LearnScreen(){
+    var completedTask by remember {
+        mutableStateOf(false)
+    }
     Box(modifier = Modifier
         .fillMaxSize()
         .verticalScroll(rememberScrollState())
@@ -41,149 +41,68 @@ fun LearnScreen(){
             Button(colors = ButtonDefaults.buttonColors(
                 backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                 contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                onClick = { completedTask = !completedTask }) {
+                Row() {
+                        Image(painter = painterResource(id = if (completedTask) {
+                            R.drawable.completed
+                        } else {
+                            R.drawable.ellipse
+                        }),
+                            contentDescription = "completed", modifier = Modifier.size(30.dp))
+                        Spacer(modifier = Modifier.width(15.dp))
+                        Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                    }
+                }
+            Spacer(modifier = Modifier.height(1.dp))
+            Button(colors = ButtonDefaults.buttonColors(
+                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
+                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
+                onClick = { completedTask = !completedTask }) {
+                Row() {
+                    Image(painter = painterResource(id = if (completedTask) {
+                        R.drawable.completed
+                    } else {
+                        R.drawable.ellipse
+                    }),
+                        contentDescription = "completed", modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                }
             }
             Spacer(modifier = Modifier.height(1.dp))
             Button(colors = ButtonDefaults.buttonColors(
                 backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                 contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                onClick = { completedTask = !completedTask }) {
+                Row() {
+                    Image(painter = painterResource(id = if (completedTask) {
+                        R.drawable.completed
+                    } else {
+                        R.drawable.ellipse
+                    }),
+                        contentDescription = "completed", modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                }
             }
             Spacer(modifier = Modifier.height(1.dp))
             Button(colors = ButtonDefaults.buttonColors(
                 backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                 contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                onClick = { completedTask = !completedTask }) {
+                Row() {
+                    Image(painter = painterResource(id = if (completedTask) {
+                        R.drawable.completed
+                    } else {
+                        R.drawable.ellipse
+                    }),
+                        contentDescription = "completed", modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(text = "Сектори економіки: первинний, вторинний, третинний")
+                }
             }
             Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
-            Spacer(modifier = Modifier.height(1.dp))
-            Button(colors = ButtonDefaults.buttonColors(
-                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
-                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
-                onClick = { /*TODO*/ }) {
-                Text(text = "Сектори економіки: первинний, вторинний, третинний")
-            }
+
         }
     }
 }
@@ -201,3 +120,4 @@ fun LearnScreenPreview() {
 fun LearnScreenDarkPreview() {
     LearnScreen()
 }
+
