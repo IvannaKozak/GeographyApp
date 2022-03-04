@@ -11,6 +11,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.testapp.*
+import com.example.testapp.learnscreens.FirstScreen
+import com.example.testapp.learnscreens.GeneralGeography
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {
@@ -25,7 +27,7 @@ fun SetupNavGraph(navController: NavHostController) {
             HomeScreen(navController = navController)
         }
         composable(route = Screen.Learn.route){
-            LearnScreen()
+            LearnScreen(navController = navController)
         }
         composable(route = Screen.Progress.route){
             ProgressScreen()
@@ -35,6 +37,13 @@ fun SetupNavGraph(navController: NavHostController) {
         }
         composable(route = Screen.Test.route){
             TestScreen()
+        }
+
+        composable(route = Screen.GenGeo.route){
+            GeneralGeography(navController = navController)
+        }
+        composable(route = Screen.First.route){
+            FirstScreen()
         }
     }
 }

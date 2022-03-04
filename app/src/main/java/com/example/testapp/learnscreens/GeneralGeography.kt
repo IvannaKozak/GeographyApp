@@ -1,12 +1,14 @@
-package com.example.testapp
+package com.example.testapp.learnscreens
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.layout.Arrangement.Start
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
+import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -20,19 +22,21 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.example.testapp.R
 import com.example.testapp.navigation.Screen
 import kotlinx.coroutines.delay
-import org.intellij.lang.annotations.JdkConstants
-
 
 @Composable
-fun LearnScreen(navController: NavHostController){
+fun GeneralGeography(navController: NavHostController){
     var completedTask by remember { mutableStateOf(false) }
     var completedTask1 by remember { mutableStateOf(false) }
     var completedTask2 by remember { mutableStateOf(false) }
     var completedTask3 by remember { mutableStateOf(false) }
     var completedTask4 by remember { mutableStateOf(false) }
     var completedTask5 by remember { mutableStateOf(false) }
+    var completedTask6 by remember { mutableStateOf(false) }
+    var completedTask7 by remember { mutableStateOf(false) }
+
     Box(modifier = Modifier
         .fillMaxSize()
         .verticalScroll(rememberScrollState())
@@ -41,24 +45,24 @@ fun LearnScreen(navController: NavHostController){
         //contentAlignment = Alignment.Center
     ) {
         Column() {
-            Text(text = "  Розділи", fontSize = 25.sp, color = if(isSystemInDarkTheme()) Color(0xFFFFB400) else Color.Black)
+            Text(text = "  Підрозділи", fontSize = 25.sp, color = if(isSystemInDarkTheme()) Color(0xFFFFB400) else Color.Black)
             Spacer(modifier = Modifier.height(20.dp))
             Button(colors = ButtonDefaults.buttonColors(
                 backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
                 contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
                 onClick = { completedTask = !completedTask
-                    navController.navigate(com.example.testapp.navigation.Screen.GenGeo.route) }) {
+                    navController.navigate(com.example.testapp.navigation.Screen.First.route) }) {
                 Row() {
-                        Image(painter = painterResource(id = if (completedTask) {
-                            R.drawable.completed
-                        } else {
-                            R.drawable.ellipse
-                        }),
-                            contentDescription = "completed", modifier = Modifier.size(30.dp))
-                        Spacer(modifier = Modifier.width(15.dp))
-                        Text(color = Color.Black, text = "1. Загальна географія                                   ", fontSize = 23.sp)
-                    }
+                    Image(painter = painterResource(id = if (completedTask) {
+                        R.drawable.completed
+                    } else {
+                        R.drawable.ellipse
+                    }),
+                        contentDescription = "completed", modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(text = "Географічні відкриття, видатні мандрівники                              ", fontSize = 23.sp)
                 }
+            }
             Spacer(modifier = Modifier.height(1.dp))
             Button(colors = ButtonDefaults.buttonColors(
                 backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
@@ -73,7 +77,7 @@ fun LearnScreen(navController: NavHostController){
                     }),
                         contentDescription = "completed", modifier = Modifier.size(30.dp))
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(color = Color.Black, text = "2. Географія материків і океанів                       ", fontSize = 23.sp)
+                    Text(text = "Способи зображення Землі                        ", fontSize = 23.sp)
                 }
             }
             Spacer(modifier = Modifier.height(1.dp))
@@ -89,7 +93,7 @@ fun LearnScreen(navController: NavHostController){
                     }),
                         contentDescription = "completed", modifier = Modifier.size(30.dp))
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(color = Color.Black, text = "3. Фізична географія України                        ", fontSize = 23.sp)
+                    Text(text = "Рух Землі як планети                                ", fontSize = 23.sp)
                 }
             }
             Spacer(modifier = Modifier.height(1.dp))
@@ -105,7 +109,7 @@ fun LearnScreen(navController: NavHostController){
                     }),
                         contentDescription = "completed", modifier = Modifier.size(30.dp))
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(color = Color.Black, text = "4. Населення України та світу                           ", fontSize = 23.sp)
+                    Text(text = "Літосфера та рельєф                               ", fontSize = 23.sp)
                 }
             }
             Spacer(modifier = Modifier.height(1.dp))
@@ -121,7 +125,7 @@ fun LearnScreen(navController: NavHostController){
                     }),
                         contentDescription = "completed", modifier = Modifier.size(30.dp))
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(color = Color.Black, text = "5. Україна і світове господарство                        ", fontSize = 23.sp)
+                    Text(text = "Атмосфера та клімат                   ", fontSize = 23.sp)
                 }
             }
             Spacer(modifier = Modifier.height(1.dp))
@@ -137,14 +141,41 @@ fun LearnScreen(navController: NavHostController){
                     }),
                         contentDescription = "completed", modifier = Modifier.size(30.dp))
                     Spacer(modifier = Modifier.width(15.dp))
-                    Text(color = Color.Black, text = "6. Регіони та країни                                      ", fontSize = 23.sp)
+                    Text(text = "Гідросфера. Світовий океан                                    ", fontSize = 23.sp)
                 }
             }
-            Spacer(modifier = Modifier.height(190.dp))
-            Text(text = "              \"Учітеся, брати мої, думайте, читайте.\"", fontSize = 18.sp,
-                color = if (isSystemInDarkTheme()) Color(0xFFFFB400) else Color.Black)
-            Text(text = "                                                                      Тарас Шевченко", fontSize = 15.sp,
-                color = if (isSystemInDarkTheme()) Color(0xFFFFB400) else Color.Black)
+            Spacer(modifier = Modifier.height(1.dp))
+            Button(colors = ButtonDefaults.buttonColors(
+                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
+                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
+                onClick = { completedTask6 = !completedTask6 }) {
+                Row() {
+                    Image(painter = painterResource(id = if (completedTask6) {
+                        R.drawable.completed
+                    } else {
+                        R.drawable.ellipse
+                    }),
+                        contentDescription = "completed", modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(text = "Біосфера та ґрунти                          ", fontSize = 23.sp)
+                }
+            }
+            Spacer(modifier = Modifier.height(1.dp))
+            Button(colors = ButtonDefaults.buttonColors(
+                backgroundColor = if (isSystemInDarkTheme()) Color.Gray else Color.White,
+                contentColor = if (isSystemInDarkTheme()) Color.Black else Color.Black),
+                onClick = { completedTask7 = !completedTask7 }) {
+                Row() {
+                    Image(painter = painterResource(id = if (completedTask7) {
+                        R.drawable.completed
+                    } else {
+                        R.drawable.ellipse
+                    }),
+                        contentDescription = "completed", modifier = Modifier.size(30.dp))
+                    Spacer(modifier = Modifier.width(15.dp))
+                    Text(text = "Природні комплекси. Географічна оболонка                          ", fontSize = 23.sp)
+                }
+            }
         }
     }
 }
@@ -152,14 +183,13 @@ fun LearnScreen(navController: NavHostController){
 
 @Composable
 @Preview
-fun LearnScreenPreview() {
-    LearnScreen(navController = rememberNavController())
+fun GeneralGeographyPreview() {
+    GeneralGeography(navController = rememberNavController())
 }
 
 
 @Composable
 @Preview(uiMode = UI_MODE_NIGHT_YES)
-fun LearnScreenDarkPreview() {
-    LearnScreen(navController = rememberNavController())
+fun GeneralGeographyDarkPreview() {
+    GeneralGeography(navController = rememberNavController())
 }
-
