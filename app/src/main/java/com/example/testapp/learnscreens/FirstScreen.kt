@@ -84,7 +84,7 @@ fun FirstScreen(){
                 color = if (isSystemInDarkTheme()) Color.White else Color.Black,
                 fontSize = 22.sp)
             Spacer(modifier = Modifier.height(20.dp))
-            Image(painter = painterResource(R.drawable.thirdmap2), contentDescription = "first_map",
+            Image(painter = painterResource(R.drawable.vitusbering), contentDescription = "first_map",
                 modifier = Modifier.fillMaxWidth())
         }
     }
